@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 import MarvelService from '../../services/MarvelService';
-import Spinner from '../spinner/Spinner';
+// import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import Skeleton from '../skeleton/Skeleton';
 
@@ -66,14 +66,14 @@ class CharInfo extends Component {
 
         const skeleton = char || loading || error ? null : <Skeleton/>;
         const errorMessage = error ? <ErrorMessage/> : null;
-        const spinner = loading ? <Spinner/> : null;
+        // const spinner = loading ? <Spinner/> : null;
         const content = !(loading || error || !char) ? <View char={char}/> : null;
 
         return (
             <div className="char__info">
                 {skeleton}
                 {errorMessage}
-                {spinner}
+                {/* {spinner} */}
                 {content}
             </div>
         )
