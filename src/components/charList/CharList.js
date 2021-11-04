@@ -12,13 +12,13 @@ class CharList extends Component {
         error: false,
         newItemLoading: false,
         offset: 210,
-        charEnded: false,
+        charEnded: false
     }
     
     marvelService = new MarvelService();
 
     componentDidMount() {
-        this.onRequest()
+        this.onRequest();
     }
 
     onRequest = (offset) => {
@@ -40,14 +40,12 @@ class CharList extends Component {
             ended = true;
         }
 
-
         this.setState(({offset, charList}) => ({
             charList: [...charList, ...newCharList],
             loading: false,
             newItemLoading: false,
             offset: offset + 9,
-            charEnded: ended,
-
+            charEnded: ended
         }))
     }
 
@@ -58,7 +56,7 @@ class CharList extends Component {
         })
     }
 
-
+ 
     renderItems(arr) {
         const items =  arr.map((item) => {
             let imgStyle = {'objectFit' : 'cover'};
@@ -86,7 +84,7 @@ class CharList extends Component {
 
     render() {
 
-        const {charList, loading, error, newItemLoading, offset, charEnded} = this.state;
+        const {charList, loading, error, offset, newItemLoading, charEnded} = this.state;
         
         const items = this.renderItems(charList);
 
@@ -99,7 +97,7 @@ class CharList extends Component {
                 {errorMessage}
                 {spinner}
                 {content}
-                <button
+                <button 
                     className="button button__main button__long"
                     disabled={newItemLoading}
                     style={{'display': charEnded ? 'none' : 'block'}}

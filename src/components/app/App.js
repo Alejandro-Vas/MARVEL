@@ -8,9 +8,9 @@ import ErrorBoundary from "../errorBoundary/ErrorBoundary";
 import decoration from '../../resources/img/vision.png';
 
 class App extends Component {
-
+    
     state = {
-        selectedChar: null,
+        selectedChar: null
     }
 
     onCharSelected = (id) => {
