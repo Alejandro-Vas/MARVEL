@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import Spinner from '../spinner/Spinner';
+// import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import MarvelService from '../../services/MarvelService';
 import './charList.scss';
@@ -89,13 +89,13 @@ class CharList extends Component {
         const items = this.renderItems(charList);
 
         const errorMessage = error ? <ErrorMessage/> : null;
-        const spinner = loading ? <Spinner/> : null;
+        // const spinner = loading ? <Spinner/> : null;
         const content = !(loading || error) ? items : null;
 
         return (
             <div className="char__list">
                 {errorMessage}
-                {spinner}
+                {/* {spinner} */}
                 {content}
                 <button 
                     className="button button__main button__long"
