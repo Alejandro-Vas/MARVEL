@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 
 import useMarvelService from '../../services/MarvelService';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../spinner/spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 
 import './singleComicPage.scss'
